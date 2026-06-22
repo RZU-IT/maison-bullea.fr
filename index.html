@@ -4,7 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Maison Bulléa — Savons artisanaux à Agen</title>
-  <meta name="description" content="Maison Bulléa est une savonnerie artisanale bio située à environ 20 km d'Agen, spécialisée dans la fabrication de savons naturels à partir d'ingrédients biologiques soigneusement sélectionnés."/>
+  <meta name="description" content="Découvrez Maison Bulléa, un concept de savonnerie artisanale bio imaginé à Agen : savons naturels, coffrets colorés et créations faites main."/>
+  <link rel="canonical" href="https://rzu-it.github.io/maison-bullea.fr/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Maison Bulléa — Savons artisanaux à Agen">
+  <meta property="og:description" content="Un concept coloré de savonnerie artisanale bio imaginé à Agen.">
+  <meta property="og:url" content="https://rzu-it.github.io/maison-bullea.fr/">
+  <meta property="og:image" content="https://rzu-it.github.io/maison-bullea.fr/assets/hero_savons_web.jpg">
+  <meta property="og:image:alt" content="Savons artisanaux colorés de Maison Bulléa">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Maison Bulléa — Savons artisanaux à Agen">
+  <meta name="twitter:description" content="Un concept coloré de savonnerie artisanale bio imaginé à Agen.">
+  <meta name="twitter:image" content="https://rzu-it.github.io/maison-bullea.fr/assets/hero_savons_web.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Fraunces:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -170,9 +182,9 @@
         <div class="socials"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">Pinterest</a></div>
       </div>
       <form class="contact-form reveal" onsubmit="event.preventDefault(); alert('Formulaire de démonstration');">
-        <label>Nom<input type="text" placeholder="Votre nom"></label>
-        <label>Email<input type="email" placeholder="vous@email.fr"></label>
-        <label>Message<textarea placeholder="Votre message"></textarea></label>
+        <label>Nom<input type="text" name="name" placeholder="Votre nom" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" placeholder="vous@email.fr" autocomplete="email" required></label>
+        <label>Message<textarea name="message" placeholder="Votre message" minlength="10" maxlength="1500" required></textarea></label>
         <button class="btn primary" type="submit">Envoyer</button>
       </form>
     </section>
@@ -192,7 +204,7 @@
       </nav>
       <div class="footer-credit">
         <span>Site imaginé et intégré par</span>
-        <a href="#" aria-label="RZU Informatique">RZU-Informatique</a>
+        <a href="https://rzu-informatique.fr" aria-label="RZU Informatique">RZU-Informatique</a>
       </div>
     </div>
     <p class="footer-bottom">© 2026 Maison Bulléa · Démonstration GitHub Pages</p>
