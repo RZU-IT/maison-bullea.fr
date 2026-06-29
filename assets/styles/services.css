@@ -1,0 +1,59 @@
+.services {
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+
+.service-grid {
+  position: relative;
+  z-index: 26;
+  display: grid;
+  align-items: stretch;
+  padding: 18px;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.service-grid article {
+  display: grid;
+  min-height: 132px;
+  align-content: center;
+  padding: 24px;
+  border-radius: 22px;
+  background: var(--white);
+  grid-template-rows: 20px auto auto;
+  gap: 6px;
+}
+
+.service-grid .mini-icon {
+  position: static;
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  animation: none;
+  transform: none;
+}
+
+.service-grid strong,
+.service-grid article > span {
+  display: block;
+  line-height: 1.35;
+}
+
+.shop-cta {
+  width: fit-content;
+  max-width: 100%;
+  min-height: 52px;
+  padding-inline: clamp(20px, 5vw, 28px);
+  white-space: normal;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .shop-cta {
+    margin-inline: auto;
+    line-height: 1.2;
+  }
+}
+
+/* RZU-Informatique */

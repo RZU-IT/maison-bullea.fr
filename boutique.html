@@ -1,74 +1,215 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Boutique — Maison Bulléa</title>
-  <meta name="description" content="Découvrez la collection de savons artisanaux bio Maison Bulléa : créations colorées, ingrédients naturels et inspirations locales autour d'Agen.">
-  <link rel="canonical" href="https://rzu-it.github.io/maison-bullea.fr/boutique.html">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Boutique — Maison Bulléa">
-  <meta property="og:description" content="Six créations artisanales, naturelles et colorées imaginées autour d'Agen.">
-  <meta property="og:url" content="https://rzu-it.github.io/maison-bullea.fr/boutique.html">
-  <meta property="og:image" content="https://rzu-it.github.io/maison-bullea.fr/assets/hero_savons_web.jpg">
-  <meta property="og:image:alt" content="Savons artisanaux colorés de Maison Bulléa">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css" />
-</head>
-<body>
-  <canvas id="bubble-canvas" aria-hidden="true"></canvas>
-  <header class="navbar solid">
-    <a class="brand" href="index.html"><span class="brand-flower" aria-hidden="true">✿</span> Maison Bulléa</a>
-    <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="nav-links" id="navLinks">
-      <a href="index.html#histoire">Qui sommes-nous</a>
-      <a href="index.html#panorama">Galerie</a>
-      <a href="index.html#services">Services</a>
-      <a href="boutique.html">Boutique</a>
-      <a href="index.html#contact" class="pill">Contact</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#fff0f7" />
+    <title>Boutique — Maison Bulléa</title>
+    <meta
+      name="description"
+      content="Découvrez la collection de savons artisanaux bio Maison Bulléa : créations colorées, ingrédients naturels et inspirations locales autour d'Agen."
+    />
+    <link
+      rel="canonical"
+      href="https://rzu-it.github.io/maison-bullea.fr/boutique.html"
+    />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Maison Bulléa" />
+    <meta property="og:title" content="Boutique — Maison Bulléa" />
+    <meta
+      property="og:description"
+      content="Six créations artisanales, naturelles et colorées imaginées autour d'Agen."
+    />
+    <meta
+      property="og:url"
+      content="https://rzu-it.github.io/maison-bullea.fr/boutique.html"
+    />
+    <meta
+      property="og:image"
+      content="https://rzu-it.github.io/maison-bullea.fr/assets/images/hero_savons_web.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Savons artisanaux colorés de Maison Bulléa"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Boutique — Maison Bulléa" />
+    <meta
+      name="twitter:description"
+      content="Six créations artisanales, naturelles et colorées imaginées autour d'Agen."
+    />
+    <meta
+      name="twitter:image"
+      content="https://rzu-it.github.io/maison-bullea.fr/assets/images/hero_savons_web.jpg"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles/base.css" />
+    <link rel="stylesheet" href="assets/styles/navigation.css" />
+    <link rel="stylesheet" href="assets/styles/hero.css" />
+    <link rel="stylesheet" href="assets/styles/histoire.css" />
+    <link rel="stylesheet" href="assets/styles/panorama.css" />
+    <link rel="stylesheet" href="assets/styles/produits.css" />
+    <link rel="stylesheet" href="assets/styles/services.css" />
+    <link rel="stylesheet" href="assets/styles/contact.css" />
+    <link rel="stylesheet" href="assets/styles/boutique.css" />
+    <link rel="stylesheet" href="assets/styles/footer.css" />
+    <link rel="stylesheet" href="assets/styles/intro.css" />
+    <link rel="stylesheet" href="assets/styles/responsive.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Aller au contenu</a>
+    <canvas id="bubble-canvas" aria-hidden="true"></canvas>
 
-  <main class="shop-main">
-    <section class="section shop-hero reveal">
-      <p class="eyebrow">Fausse boutique intégrée</p>
-      <h1>Six savons extravagants, bio et faits main.</h1>
-      <p class="lead">Découvrez notre collection de savons artisanaux biologiques, fabriqués avec soin à partir d’ingrédients naturels sélectionnés pour leur qualité et leurs bienfaits.</p>
-    </section>
-
-    <section class="shop-grid" id="shopGrid"></section>
-  </main>
-
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="modal-close" id="modalClose" aria-label="Fermer">×</button>
-      <div id="modalBody"></div>
-    </div>
-  </div>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>
-        <strong>Maison Bulléa</strong>
-        <p>Boutique fictive pour démonstration portfolio. Paiement non fonctionnel.</p>
-      </div>
-      <nav aria-label="Navigation footer">
-        <a href="index.html">Accueil</a>
-        <a href="index.html#panorama">Atelier</a>
-        <a href="boutique.html">Boutique</a>
-        <a href="index.html#contact">Contact</a>
+    <header class="navbar solid" id="navbar">
+      <a class="brand" href="index.html#top" aria-label="Accueil Maison Bulléa">
+        <span class="brand-flower" aria-hidden="true">✿</span>
+        Maison Bulléa
+      </a>
+      <button
+        class="hamburger"
+        id="hamburger"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-controls="navLinks"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+        <a href="index.html#histoire">Qui sommes-nous</a>
+        <a href="index.html#panorama">Galerie</a>
+        <a href="index.html#services">Services</a>
+        <a
+          href="boutique.html"
+          class="nav-shop-link"
+          aria-current="page"
+          aria-label="Boutique"
+        >
+          <span class="nav-shop-icon" aria-hidden="true"
+            ><svg viewBox="0 0 24 24" focusable="false">
+              <path d="M7 9V7a5 5 0 0 1 10 0v2" />
+              <path d="M5.5 8.5h13l1 11H4.5l1-11Z" /></svg
+          ></span>
+          <span class="nav-label">Boutique</span>
+        </a>
+        <a
+          href="index.html#contact"
+          class="pill nav-contact-link"
+          aria-label="Contact"
+        >
+          <span class="nav-contact-icon" aria-hidden="true"
+            ><svg viewBox="0 0 24 24" focusable="false">
+              <path d="M4.5 6.5h15v11h-15z" />
+              <path d="m5 7 7 6 7-6" /></svg
+          ></span>
+          <span class="nav-label">Contact</span>
+        </a>
       </nav>
-      <div class="footer-credit">
-        <span>Site imaginé et intégré par</span>
-        <a href="https://rzu-informatique.fr" aria-label="RZU Informatique">RZU-Informatique</a>
+    </header>
+
+    <main class="shop-main" id="main-content" tabindex="-1">
+      <section class="section shop-hero reveal">
+        <p class="eyebrow">Fausse boutique intégrée</p>
+        <h1>Six savons extravagants, bio et faits main.</h1>
+        <p class="lead">
+          Découvrez notre collection de savons artisanaux biologiques, fabriqués
+          avec soin à partir d’ingrédients naturels sélectionnés pour leur
+          qualité et leurs bienfaits.
+        </p>
+      </section>
+      <section
+        class="shop-grid"
+        id="shopGrid"
+        aria-label="Collection de savons"
+      >
+        <noscript
+          >Active JavaScript pour afficher les produits de
+          démonstration.</noscript
+        >
+      </section>
+      <div class="shop-toggle-wrap">
+        <button
+          class="btn primary shop-toggle"
+          id="shopToggle"
+          type="button"
+          aria-controls="shopGrid"
+          aria-expanded="false"
+        >
+          Afficher les 3 autres savons
+        </button>
+      </div>
+    </main>
+
+    <div
+      class="modal"
+      id="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-content">
+        <button
+          class="modal-close"
+          id="modalClose"
+          type="button"
+          aria-label="Fermer la fenêtre"
+        >
+          ×
+        </button>
+        <div id="modalBody"></div>
       </div>
     </div>
-    <p class="footer-bottom">© 2026 Maison Bulléa · Démonstration GitHub Pages</p>
-  </footer>
-  <script src="assets/app.js"></script>
-</body>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <strong>Maison Bulléa</strong>
+          <p>
+            Boutique fictive pour démonstration portfolio. Paiement non
+            fonctionnel.
+          </p>
+        </div>
+        <nav aria-label="Navigation secondaire">
+          <a href="index.html">Accueil</a>
+          <a href="index.html#panorama">Atelier</a>
+          <a href="boutique.html" aria-current="page">Boutique</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <div class="footer-credit">
+          <span>Site imaginé et intégré par</span>
+          <a
+            href="https://rzu-informatique.fr"
+            aria-label="Site de Rzu Informatique"
+            >Rzu-Informatique</a
+          >
+        </div>
+      </div>
+      <p class="footer-bottom">
+        <span>© 2026 Maison Bulléa · Démonstration GitHub Pages</span>
+        <a
+          class="footer-replay"
+          href="index.html?intro=1"
+          aria-label="Revoir la maison"
+          title="Revoir la maison"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4 11.5 12 5l8 6.5" />
+            <path d="M6.5 10.5V20h11v-9.5" />
+            <path d="M10 20v-5h4v5" />
+          </svg>
+        </a>
+      </p>
+    </footer>
+
+    <script src="assets/scripts/app.js"></script>
+    <!-- RZU-Informatique -->
+  </body>
 </html>

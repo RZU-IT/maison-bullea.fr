@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://rzu-it.github.io/maison-bullea.fr/sitemap.xml
+
+# RZU-Informatique

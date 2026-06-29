@@ -1,0 +1,180 @@
+.hero.section {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  align-items: center;
+  margin: 0;
+  overflow: hidden;
+  padding: 120px max(24px, calc((100vw - 1200px) / 2)) 80px;
+}
+
+.hero::before,
+.hero::after {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  content: "";
+}
+
+.hero::before {
+  inset: -18px;
+  background: url("../images/hero_savons_web.jpg") center / cover no-repeat;
+  transform: scale(1.04)
+    translate3d(var(--hero-bg-x, 0), var(--hero-bg-y, 0), 0);
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+.hero::after {
+  z-index: -1;
+  background: linear-gradient(
+    105deg,
+    rgba(20, 10, 40, 0.76),
+    rgba(50, 24, 70, 0.5) 48%,
+    rgba(255, 255, 255, 0.08)
+  );
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  transform: translate3d(var(--hero-copy-x, 0), var(--hero-copy-y, 0), 0);
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+.hero-badge {
+  display: inline-block;
+  margin-bottom: 24px;
+  padding: 7px 18px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--hero-gold);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.hero-title {
+  margin-bottom: 24px;
+  color: var(--white);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 5rem;
+  line-height: 1.08;
+}
+
+.hero-title em {
+  display: block;
+  color: var(--hero-pink);
+}
+
+.hero-desc {
+  max-width: 650px;
+  margin: 0 0 36px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.1rem;
+}
+
+.hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.hero .btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--hero-button-start),
+    var(--hero-button-end)
+  );
+  box-shadow: 0 4px 20px rgba(233, 30, 140, 0.3);
+}
+
+.hero .btn-primary:hover {
+  box-shadow: 0 8px 32px rgba(233, 30, 140, 0.5);
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.stat-num {
+  color: var(--white);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.stat-sep {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 1.5rem;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+.scroll-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.hero:focus {
+  outline: none;
+}
+
+.hero.section {
+  --hero-bg-x: 0px;
+  --hero-bg-y: 0px;
+  --hero-copy-x: 0px;
+  --hero-copy-y: 0px;
+}
+
+.js .hero-copy.reveal,
+.js .hero-copy.reveal.visible {
+  transform: translate3d(var(--hero-copy-x), var(--hero-copy-y), 0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero::before,
+  .hero-copy {
+    transition: transform 0.08s linear;
+  }
+}
+
+/* RZU-Informatique */

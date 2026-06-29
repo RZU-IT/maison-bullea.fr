@@ -1,0 +1,181 @@
+.contact.section {
+  position: relative;
+  display: grid;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 110px max(24px, calc((100vw - var(--content-width)) / 2));
+  background: var(--contact-gradient);
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+
+.contact.section > *:not(.contact-soaps) {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+.contact-soaps {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.contact-soap {
+  position: absolute;
+  display: block;
+  width: 92px;
+  height: 54px;
+  border-radius: 24px 30px 22px 32px;
+  box-shadow:
+    inset -10px -12px 18px rgba(65, 42, 88, 0.16),
+    inset 12px 10px 18px rgba(255, 255, 255, 0.62),
+    0 24px 54px rgba(89, 67, 114, 0.16);
+  opacity: 0.88;
+  animation: contact-soap-float 7s ease-in-out infinite;
+}
+
+.contact-soap::before {
+  position: absolute;
+  inset: 13px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: inherit;
+  content: "";
+}
+
+.contact-soap::after {
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  width: 18px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.68);
+  content: "";
+  filter: blur(0.2px);
+}
+
+.soap-rose {
+  top: 18%;
+  left: 4%;
+  background: linear-gradient(135deg, #ff7fbd, #ffc7e2, #fff);
+  transform: rotate(-14deg);
+  animation-delay: -0.4s;
+}
+
+.soap-blue {
+  top: 12%;
+  right: 8%;
+  width: 112px;
+  height: 62px;
+  background: linear-gradient(135deg, #65d9ff, #f4ffff, #b693ff);
+  transform: rotate(12deg);
+  animation-delay: -1.8s;
+}
+
+.soap-mint {
+  bottom: 10%;
+  left: 34%;
+  width: 76px;
+  height: 46px;
+  background: linear-gradient(135deg, #8df2c2, #fff8bd, #fff);
+  transform: rotate(9deg);
+  animation-delay: -3.1s;
+}
+
+.soap-gold {
+  right: 28%;
+  bottom: 18%;
+  width: 84px;
+  height: 48px;
+  background: linear-gradient(135deg, #ffd978, #ff91cd, #fff);
+  transform: rotate(-10deg);
+  animation-delay: -4.2s;
+}
+
+.soap-violet {
+  bottom: 22%;
+  left: 13%;
+  width: 64px;
+  height: 40px;
+  background: linear-gradient(135deg, #b693ff, #ffb1d7, #fff);
+  transform: rotate(18deg);
+  animation-delay: -5.4s;
+}
+
+@keyframes contact-soap-float {
+  0%,
+  100% {
+    translate: 0 0;
+    rotate: 0deg;
+  }
+  35% {
+    translate: 14px -18px;
+    rotate: 5deg;
+  }
+  70% {
+    translate: -10px 12px;
+    rotate: -4deg;
+  }
+}
+
+.contact-form {
+  display: grid;
+  padding: 24px;
+  gap: 14px;
+}
+
+.form-field {
+  display: grid;
+  gap: 6px;
+}
+
+.contact-form label {
+  font-weight: 900;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #efdcea;
+  border-radius: 18px;
+  background: var(--white);
+  padding: 14px;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--pink);
+  outline: 0;
+  box-shadow: 0 0 0 4px rgba(255, 127, 189, 0.16);
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  max-height: 150px;
+  resize: none;
+}
+
+.field-limit {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.form-status {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #eefcf5;
+  color: #27684b;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+/* RZU-Informatique */

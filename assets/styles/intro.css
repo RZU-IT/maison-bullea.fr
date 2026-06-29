@@ -1,0 +1,663 @@
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #fff, #ffe8f3 40%, #dffaff);
+  place-items: center;
+  transition:
+    opacity 0.6s ease,
+    transform 0.65s var(--ease-out);
+}
+
+.intro[hidden] {
+  display: none;
+}
+.intro.entering {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.05);
+}
+
+.intro-card {
+  position: relative;
+  z-index: 2;
+  width: min(620px, 92vw);
+  padding: 25px;
+  text-align: center;
+}
+
+.intro-title {
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-family: Fraunces, serif;
+  font-size: 4.2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.house {
+  position: relative;
+  display: block;
+  width: 230px;
+  height: 250px;
+  margin: 20px auto 10px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  filter: drop-shadow(0 28px 35px rgba(146, 84, 130, 0.28));
+  transition:
+    transform 0.45s var(--ease-out),
+    filter 0.45s ease;
+}
+
+.house:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+
+.house:disabled {
+  cursor: default;
+}
+
+.roof {
+  position: absolute;
+  top: 8px;
+  left: 28px;
+  width: 174px;
+  height: 174px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--pink), var(--gold));
+  transform: rotate(45deg);
+}
+
+.chimney {
+  position: absolute;
+  top: 28px;
+  right: 43px;
+  z-index: -1;
+  width: 28px;
+  height: 70px;
+  border-radius: 8px;
+  background: #d18bc0;
+}
+
+.walls {
+  position: absolute;
+  bottom: 15px;
+  left: 35px;
+  width: 160px;
+  height: 145px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #fff, #ecfbff);
+}
+
+.window {
+  position: absolute;
+  top: 34px;
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  background: #ffe483;
+  box-shadow: 0 0 18px var(--gold);
+}
+
+.window.left {
+  left: 25px;
+}
+
+.window.right {
+  right: 25px;
+}
+
+.door {
+  position: absolute;
+  bottom: 0;
+  left: 58px;
+  width: 48px;
+  height: 78px;
+  border-radius: 22px 22px 10px 10px;
+  background: linear-gradient(135deg, #a96aee, var(--pink));
+  transform-origin: left;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.house.open .door {
+  transform: perspective(450px) rotateY(-68deg);
+}
+
+.house.open {
+  filter: drop-shadow(0 42px 64px rgba(146, 84, 130, 0.22))
+    drop-shadow(0 0 64px rgba(255, 255, 255, 0.72));
+  transform: translateY(-8px) scale(1.3);
+}
+
+.hint {
+  color: var(--pink-strong);
+  font-weight: 900;
+}
+
+.sparkle-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.classic-sparkles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.classic-sparkles::before,
+.classic-sparkles::after {
+  position: absolute;
+  color: var(--white);
+  content: "✦ ✧ ✦ ✧ ✦";
+  font-size: 32px;
+  letter-spacing: 6px;
+  text-shadow: 0 0 12px var(--pink);
+  animation: classic-sparkle-float 3s linear infinite;
+  will-change: transform, opacity;
+}
+
+.classic-sparkles::before {
+  top: 18%;
+  left: 12%;
+}
+
+.classic-sparkles::after {
+  right: 10%;
+  bottom: 20%;
+  animation-delay: -1.3s;
+}
+
+@keyframes classic-sparkle-float {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: translate3d(0, -20px, 0) rotate(10deg);
+  }
+}
+
+.sparkle-field span {
+  position: absolute;
+  bottom: -10%;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  background: var(--white);
+  clip-path: polygon(
+    50% 0,
+    62% 36%,
+    100% 50%,
+    62% 64%,
+    50% 100%,
+    38% 64%,
+    0 50%,
+    38% 36%
+  );
+  filter: drop-shadow(0 0 8px rgba(255, 127, 189, 0.8));
+  animation: sparkle-rise 7.2s linear infinite;
+}
+
+.sparkle-field span:nth-child(1) {
+  left: 9%;
+  animation-delay: 0s;
+}
+.sparkle-field span:nth-child(2) {
+  left: 11.5%;
+  width: 7px;
+  height: 7px;
+  animation-delay: 0.32s;
+}
+.sparkle-field span:nth-child(3) {
+  left: 14%;
+  width: 13px;
+  height: 13px;
+  animation-delay: 0.64s;
+}
+.sparkle-field span:nth-child(4) {
+  left: 16.5%;
+  width: 6px;
+  height: 6px;
+  animation-delay: 0.96s;
+}
+.sparkle-field span:nth-child(5) {
+  left: 19%;
+  animation-delay: 1.28s;
+}
+.sparkle-field span:nth-child(6) {
+  left: 45%;
+  width: 7px;
+  height: 7px;
+  animation-delay: -2.4s;
+}
+.sparkle-field span:nth-child(7) {
+  left: 47.5%;
+  width: 12px;
+  height: 12px;
+  animation-delay: -2.08s;
+}
+.sparkle-field span:nth-child(8) {
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  animation-delay: -1.76s;
+}
+.sparkle-field span:nth-child(9) {
+  left: 52.5%;
+  animation-delay: -1.44s;
+}
+.sparkle-field span:nth-child(10) {
+  left: 55%;
+  width: 7px;
+  height: 7px;
+  animation-delay: -1.12s;
+}
+.sparkle-field span:nth-child(11) {
+  left: 79%;
+  width: 13px;
+  height: 13px;
+  animation-delay: -4.8s;
+}
+.sparkle-field span:nth-child(12) {
+  left: 81.5%;
+  width: 7px;
+  height: 7px;
+  animation-delay: -4.48s;
+}
+.sparkle-field span:nth-child(13) {
+  left: 84%;
+  width: 5px;
+  height: 5px;
+  animation-delay: -4.16s;
+}
+.sparkle-field span:nth-child(14) {
+  left: 86.5%;
+  width: 9px;
+  height: 9px;
+  animation-delay: -3.84s;
+}
+
+.door-pop {
+  position: fixed;
+  z-index: 120;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: door-pop 0.95s var(--ease-out) forwards;
+  animation-delay: var(--delay);
+}
+
+.bubble-pop {
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 25%,
+    #fff 0 16%,
+    rgba(101, 217, 255, 0.58) 44%,
+    rgba(255, 127, 189, 0.2)
+  );
+}
+
+.sparkle-pop {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  clip-path: polygon(
+    50% 0,
+    62% 36%,
+    100% 50%,
+    62% 64%,
+    50% 100%,
+    38% 64%,
+    0 50%,
+    38% 36%
+  );
+}
+
+@keyframes brand-flower-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scroll-bounce {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 8px);
+  }
+}
+
+@keyframes preview-pop {
+  from {
+    opacity: 0.45;
+    transform: translateX(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes sparkle-rise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+  12% {
+    opacity: 0.9;
+  }
+  76% {
+    opacity: 0.72;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(18px, -118vh, 0) rotate(210deg);
+  }
+}
+
+@keyframes door-pop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.35);
+  }
+  22% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty)))
+      scale(1.15) rotate(var(--rot));
+  }
+}
+
+.house:focus-visible {
+  outline: none;
+  filter: drop-shadow(0 30px 42px rgba(146, 84, 130, 0.34))
+    drop-shadow(0 0 22px rgba(255, 217, 120, 0.62));
+}
+
+.walls::after {
+  position: absolute;
+  bottom: 0;
+  left: 58px;
+  width: 48px;
+  height: 78px;
+  border-radius: 22px 22px 10px 10px;
+  background:
+    radial-gradient(circle at 50% 28%, #fff8bd 0 8%, transparent 30%),
+    linear-gradient(160deg, #65d9ff, #b693ff 48%, #ff7fbd);
+  box-shadow:
+    inset 0 0 18px rgba(255, 255, 255, 0.72),
+    0 0 24px rgba(182, 147, 255, 0.5);
+  content: "";
+}
+
+.door {
+  z-index: 1;
+}
+
+.sparkle-field::before,
+.sparkle-field::after {
+  position: absolute;
+  color: var(--white);
+  content: "";
+  font-size: 32px;
+  letter-spacing: 6px;
+  text-shadow: 0 0 12px var(--pink);
+  animation: sparkle-cluster 3s ease-in-out infinite;
+}
+
+.sparkle-field::before {
+  top: 18%;
+  left: 12%;
+}
+
+.sparkle-field::after {
+  right: 10%;
+  bottom: 20%;
+  animation-delay: -1.3s;
+}
+
+@keyframes sparkle-cluster {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    opacity: 0.45;
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+.house {
+  transition:
+    transform 0.85s cubic-bezier(0.16, 0.84, 0.24, 1),
+    filter 0.85s ease;
+}
+
+.house:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+
+.door {
+  z-index: 2;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.walls::before {
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  z-index: 0;
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #fff 0 11%,
+    rgba(255, 226, 246, 0.82) 28%,
+    rgba(101, 217, 255, 0.44) 52%,
+    transparent 72%
+  );
+  content: "";
+  filter: blur(1px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) scale(0.55);
+}
+
+.house.open .door {
+  transform: perspective(450px) rotateY(-68deg);
+}
+
+.house.open .walls::before {
+  animation: door-depth-glow 0.78s ease both;
+}
+
+.house.open::after {
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  width: 190px;
+  color: var(--white);
+  content: "";
+  font-size: 24px;
+  letter-spacing: 10px;
+  pointer-events: none;
+  text-align: center;
+  text-shadow:
+    0 0 8px var(--white),
+    0 0 16px var(--pink),
+    0 0 30px var(--blue);
+  transform: translateX(-50%);
+  animation: door-sparkles 0.72s ease both;
+}
+
+.intro.entering {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.045);
+  transition:
+    opacity 0.58s ease 0.06s,
+    transform 0.62s cubic-bezier(0.18, 0.82, 0.18, 1);
+}
+
+.intro.entering .house {
+  filter: drop-shadow(0 42px 64px rgba(146, 84, 130, 0.22))
+    drop-shadow(0 0 64px rgba(255, 255, 255, 0.72));
+  transform: translateY(-8px) scale(1.36);
+  transition:
+    transform 0.6s cubic-bezier(0.18, 0.82, 0.18, 1),
+    filter 0.6s ease;
+}
+
+.sparkle-field::before,
+.sparkle-field::after {
+  position: absolute;
+  width: 150px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 217, 120, 0.8),
+    rgba(255, 255, 255, 0)
+  );
+  box-shadow: 0 0 12px rgba(255, 217, 120, 0.65);
+  content: "";
+  opacity: 0;
+  animation: intro-shooting-star 6.6s linear infinite;
+  transform: rotate(-28deg);
+}
+
+.sparkle-field::before {
+  top: 22%;
+  left: 72%;
+  animation-delay: 0.8s;
+}
+
+.sparkle-field::after {
+  top: 58%;
+  left: 68%;
+  width: 120px;
+  animation-delay: 3.2s;
+  animation-duration: 7.4s;
+}
+
+.sparkle-field span {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--white);
+  clip-path: none;
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.9),
+    0 0 18px rgba(255, 217, 120, 0.5);
+  animation-name: twinkle-rise;
+  animation-timing-function: linear;
+}
+
+.sparkle-field span:nth-child(4n) {
+  width: 5px;
+  height: 5px;
+}
+
+.door-pop {
+  animation-duration: 0.95s;
+}
+
+@keyframes door-depth-glow {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.45);
+  }
+  35% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0.55;
+    transform: translateX(-50%) scale(1.16);
+  }
+}
+
+@keyframes door-sparkles {
+  0% {
+    opacity: 0;
+    translate: 0 12px;
+    filter: blur(2px);
+  }
+  28% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    translate: 0 -26px;
+    filter: blur(1px);
+  }
+}
+
+@keyframes intro-shooting-star {
+  0%,
+  12% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(-28deg);
+  }
+  16% {
+    opacity: 0.95;
+  }
+  36%,
+  100% {
+    opacity: 0;
+    transform: translate3d(-48vw, 30vh, 0) rotate(-28deg);
+  }
+}
+
+@keyframes twinkle-rise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0.5);
+  }
+  18% {
+    opacity: 0.95;
+  }
+  78% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(12px, -118vh, 0) scale(1.15);
+  }
+}
+
+@media (max-width: 850px) {
+  .intro.entering {
+    transform: scale(1.025);
+  }
+
+  .intro.entering .house {
+    transform: translateY(-5px) scale(1.2);
+  }
+
+  .walls::before {
+    width: 96px;
+    height: 96px;
+  }
+}
+
+/* RZU-Informatique */

@@ -1,215 +1,504 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maison Bulléa — Savons artisanaux à Agen</title>
-  <meta name="description" content="Découvrez Maison Bulléa, un concept de savonnerie artisanale bio imaginé à Agen : savons naturels, coffrets colorés et créations faites main."/>
-  <link rel="canonical" href="https://rzu-it.github.io/maison-bullea.fr/">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Maison Bulléa — Savons artisanaux à Agen">
-  <meta property="og:description" content="Un concept coloré de savonnerie artisanale bio imaginé à Agen.">
-  <meta property="og:url" content="https://rzu-it.github.io/maison-bullea.fr/">
-  <meta property="og:image" content="https://rzu-it.github.io/maison-bullea.fr/assets/hero_savons_web.jpg">
-  <meta property="og:image:alt" content="Savons artisanaux colorés de Maison Bulléa">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Maison Bulléa — Savons artisanaux à Agen">
-  <meta name="twitter:description" content="Un concept coloré de savonnerie artisanale bio imaginé à Agen.">
-  <meta name="twitter:image" content="https://rzu-it.github.io/maison-bullea.fr/assets/hero_savons_web.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Fraunces:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css" />
-</head>
-<body>
-  <canvas id="bubble-canvas" aria-hidden="true"></canvas>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#fff0f7" />
+    <title>Maison Bulléa — Savons artisanaux à Agen</title>
+    <meta
+      name="description"
+      content="Découvrez Maison Bulléa, un concept de savonnerie artisanale bio imaginé à Agen : savons naturels, coffrets colorés et créations faites main."
+    />
+    <link rel="canonical" href="https://rzu-it.github.io/maison-bullea.fr/" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Maison Bulléa" />
+    <meta
+      property="og:title"
+      content="Maison Bulléa — Savons artisanaux à Agen"
+    />
+    <meta
+      property="og:description"
+      content="Un concept coloré de savonnerie artisanale bio imaginé à Agen."
+    />
+    <meta
+      property="og:url"
+      content="https://rzu-it.github.io/maison-bullea.fr/"
+    />
+    <meta
+      property="og:image"
+      content="https://rzu-it.github.io/maison-bullea.fr/assets/images/hero_savons_web.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Savons artisanaux colorés de Maison Bulléa"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Maison Bulléa — Savons artisanaux à Agen"
+    />
+    <meta
+      name="twitter:description"
+      content="Un concept coloré de savonnerie artisanale bio imaginé à Agen."
+    />
+    <meta
+      name="twitter:image"
+      content="https://rzu-it.github.io/maison-bullea.fr/assets/images/hero_savons_web.jpg"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Fraunces:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles/base.css" />
+    <link rel="stylesheet" href="assets/styles/navigation.css" />
+    <link rel="stylesheet" href="assets/styles/hero.css" />
+    <link rel="stylesheet" href="assets/styles/histoire.css" />
+    <link rel="stylesheet" href="assets/styles/panorama.css" />
+    <link rel="stylesheet" href="assets/styles/produits.css" />
+    <link rel="stylesheet" href="assets/styles/services.css" />
+    <link rel="stylesheet" href="assets/styles/contact.css" />
+    <link rel="stylesheet" href="assets/styles/boutique.css" />
+    <link rel="stylesheet" href="assets/styles/footer.css" />
+    <link rel="stylesheet" href="assets/styles/intro.css" />
+    <link rel="stylesheet" href="assets/styles/responsive.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Aller au contenu</a>
+    <canvas id="bubble-canvas" aria-hidden="true"></canvas>
 
-  <div class="intro" id="intro">
-    <div class="sparkle-field"></div>
-    <div class="intro-card">
-      <p class="eyebrow">Bienvenue chez</p>
-      <h1>Maison Bulléa</h1>
-      <p>Une petite savonnerie artisanale, colorée et bio, imaginée à Agen.</p>
-      <button class="house" id="enterSite" aria-label="Entrer dans le site en ouvrant la porte">
-        <span class="roof"></span>
-        <span class="chimney"></span>
-        <span class="walls">
-          <span class="window left"></span>
-          <span class="window right"></span>
-          <span class="door"></span>
-        </span>
+    <div
+      class="intro"
+      id="intro"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="introTitle"
+    >
+      <div class="sparkle-field" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="classic-sparkles" aria-hidden="true"></div>
+      <div class="intro-card">
+        <p class="eyebrow">Bienvenue chez</p>
+        <p class="intro-title" id="introTitle">Maison Bulléa</p>
+        <p>
+          Une petite savonnerie artisanale, colorée et bio, imaginée à Agen.
+        </p>
+        <button
+          class="house"
+          id="enterSite"
+          type="button"
+          aria-label="Entrer dans le site en ouvrant la porte"
+        >
+          <span class="roof"></span>
+          <span class="chimney"></span>
+          <span class="walls">
+            <span class="window left"></span>
+            <span class="window right"></span>
+            <span class="door"></span>
+          </span>
+        </button>
+        <span class="hint">Clique sur la porte pour entrer</span>
+      </div>
+    </div>
+
+    <header class="navbar" id="navbar">
+      <a class="brand" href="index.html#top" aria-label="Accueil Maison Bulléa">
+        <span class="brand-flower" aria-hidden="true">✿</span>
+        Maison Bulléa
+      </a>
+      <button
+        class="hamburger"
+        id="hamburger"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-controls="navLinks"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
       </button>
-      <span class="hint">Clique sur la porte pour entrer</span>
-    </div>
-  </div>
-
-  <header class="navbar" id="navbar">
-    <a class="brand" href="index.html" aria-label="Maison Bulléa accueil"><span class="brand-flower" aria-hidden="true">✿</span> Maison Bulléa</a>
-    <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="nav-links" id="navLinks">
-      <a href="#histoire">Qui sommes-nous</a>
-      <a href="#panorama">Galerie</a>
-      <a href="#services">Services</a>
-      <a href="boutique.html">Boutique</a>
-      <a href="#contact" class="pill">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero section" id="top">
-      <div class="hero-copy reveal">
-        <div class="hero-badge">Fait main à Agen</div>
-        <h1 class="hero-title">
-          L'art du savon<br>
-          <em>artisanal bio</em>
-        </h1>
-        <p class="hero-desc">Des savons créés avec amour, des ingrédients naturels sélectionnés avec soin, pour prendre soin de vous et de la planète.</p>
-        <div class="hero-btns">
-          <a href="boutique.html" class="btn-primary">Découvrir la boutique</a>
-          <a href="#histoire" class="btn-secondary">Notre histoire</a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Bio</span></div>
-          <div class="stat-sep">·</div>
-          <div class="stat"><span class="stat-num">Fait</span><span class="stat-label">Main</span></div>
-          <div class="stat-sep">·</div>
-          <div class="stat"><span class="stat-num">Agen</span><span class="stat-label">Lot-et-Garonne</span></div>
-        </div>
-      </div>
-      <div class="soap-stage reveal" data-tilt>
-        <div class="soap soap-a"><span></span></div>
-        <div class="soap soap-b"><span></span></div>
-        <div class="soap soap-c"><span></span></div>
-        <div class="soap soap-d"><span></span></div>
-        <div class="orb orb-a"></div>
-        <div class="orb orb-b"></div>
-      </div>
-      <div class="scroll-indicator">
-        <div class="scroll-dot"></div>
-        <span>Découvrir</span>
-      </div>
-    </section>
-
-    <section class="section split" id="histoire">
-      <div class="photo-card reveal">
-        <div class="artisan-illustration">
-          <div class="bowl"></div><div class="spoon"></div><div class="tiny-soap one"></div><div class="tiny-soap two"></div>
-        </div>
-      </div>
-      <div class="reveal">
-        <p class="eyebrow">Qui sommes-nous ?</p>
-        <h2>Une savonnerie locale, douce et créative.</h2>
-        <p>Maison Bulléa est une marque fictive imaginée autour d'Agen, dans le Lot-et-Garonne. Le site met en scène un atelier artisanal où chaque savon raconte une histoire : ingrédients bio, parfums naturels, couleurs audacieuses et finitions faites main.</p>
-        <div class="values">
-          <span><i class="mini-icon leaf"></i> Bio</span><span><i class="mini-icon pin"></i> Agen</span><span><i class="mini-icon bubble"></i> Ludique</span><span><i class="mini-icon gift"></i> Cadeaux</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="panorama">
-      <div class="center reveal">
-        <p class="eyebrow">Galerie immersive</p>
-        <h2>Glisse dans notre atelier panoramique.</h2>
-        <p>Découvrez l’atelier de Maison Bulléa et l’authenticité de ses savons bio fabriqués à la main.</p>
-      </div>
-      <div class="atelier-viewer shop-panorama reveal" id="atelierViewer" aria-label="Boutique panoramique interactive">
-        <button class="atelier-arrow left" type="button" data-pan="-1" aria-label="Voir la gauche de l'atelier">‹</button>
-        <div class="atelier-window">
-          <img class="shop-panorama-img" src="assets/images/boutique_panorama_realiste.png" alt="Boutique artisanale réaliste avec savons faits main" draggable="false">
-        </div>
-        <button class="atelier-arrow right" type="button" data-pan="1" aria-label="Voir la droite de l'atelier">›</button>
-        <div class="atelier-caption">
-          <strong>Boutique panoramique</strong>
-          <span>Maintiens une flèche ou fais glisser l'image.</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="produits">
-      <div class="center reveal">
-        <p class="eyebrow">Produits vedettes</p>
-        <h2>Des cartes interactives qui donnent envie de cliquer.</h2>
-      </div>
-      <div class="card-deck reveal" id="cardDeck" aria-label="Paquet de cartes produits interactif">
-        <button class="deck-card card-one active" type="button" data-title="Nuage de Rose" data-text="Rose de Damas, argile blanche et karité bio. Une mousse douce, florale et rassurante." data-img="assets/images/savon_nuage_rose_web.jpg">
-          <span>Nuage de Rose</span>
-        </button>
-        <button class="deck-card card-two" type="button" data-title="Océan Turquoise" data-text="Algues marines, sel de mer et coco vierge. Un savon frais avec une vraie énergie marine." data-img="assets/images/savon_ocean_turquoise_web.jpg">
-          <span>Océan Turquoise</span>
-        </button>
-        <button class="deck-card card-three" type="button" data-title="Perle d'Agen" data-text="Miel local, huile de prune et reflets dorés. La carte signature du lot." data-img="assets/images/savon_perle_agen_web.jpg">
-          <span>Perle d'Agen</span>
-        </button>
-        <article class="deck-preview">
-          <img src="assets/images/savon_nuage_rose_web.jpg" alt="Savon sélectionné" id="deckPreviewImg">
-          <div>
-            <p class="eyebrow">Carte sortie du paquet</p>
-            <h3 id="deckPreviewTitle">Nuage de Rose</h3>
-            <p id="deckPreviewText">Rose de Damas, argile blanche et karité bio. Une mousse douce, florale et rassurante.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section services" id="services">
-      <div class="reveal">
-        <p class="eyebrow">Nos services</p>
-        <h2>Savons personnalisés, coffrets et créations sur mesure.</h2>
-        <p>Maison Bulléa propose des savons artisanaux biologiques fabriqués à la main, ainsi qu’une sélection de coffrets et créations sur mesure. Chaque produit reflète un engagement fort pour la qualité, la naturalité et le respect de l’environnement.</p>
-        <a class="btn primary" href="boutique.html">Voir la fausse boutique</a>
-      </div>
-      <div class="service-grid reveal">
-        <div><i class="mini-icon gift"></i> <strong>Coffrets cadeaux</strong><span>Présentations élégantes.</span></div>
-        <div><i class="mini-icon soap"></i> <strong>Créations uniques</strong><span>Formes, couleurs, motifs.</span></div>
-        <div><i class="mini-icon flower"></i> <strong>Parfums naturels</strong><span>Notes florales et fruitées.</span></div>
-        <div><i class="mini-icon star"></i> <strong>Commandes spéciales</strong><span>Mariages, événements.</span></div>
-      </div>
-    </section>
-
-    <section class="section contact" id="contact">
-      <div class="contact-soaps" aria-hidden="true">
-        <span class="contact-soap soap-rose"></span>
-        <span class="contact-soap soap-blue"></span>
-        <span class="contact-soap soap-mint"></span>
-        <span class="contact-soap soap-gold"></span>
-        <span class="contact-soap soap-violet"></span>
-      </div>
-      <div class="reveal">
-        <p class="eyebrow">Contact</p>
-        <h2>Une envie de savon ou de site web ?</h2>
-        <p>Formulaire de démonstration, idéal pour un portfolio GitHub Pages.</p>
-        <div class="socials"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">Pinterest</a></div>
-      </div>
-      <form class="contact-form reveal" onsubmit="event.preventDefault(); alert('Formulaire de démonstration');">
-        <label>Nom<input type="text" name="name" placeholder="Votre nom" autocomplete="name" required></label>
-        <label>Email<input type="email" name="email" placeholder="vous@email.fr" autocomplete="email" required></label>
-        <label>Message<textarea name="message" placeholder="Votre message" minlength="10" maxlength="1500" required></textarea></label>
-        <button class="btn primary" type="submit">Envoyer</button>
-      </form>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>
-        <strong>Maison Bulléa</strong>
-        <p>Template portfolio pour savonnerie artisanale fictive à Agen.</p>
-      </div>
-      <nav aria-label="Navigation footer">
-        <a href="#histoire">Histoire</a>
-        <a href="#panorama">Atelier</a>
-        <a href="boutique.html">Boutique</a>
-        <a href="#contact">Contact</a>
+      <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+        <a href="#histoire">Qui sommes-nous</a>
+        <a href="#panorama">Galerie</a>
+        <a href="#services">Services</a>
+        <a href="boutique.html" class="nav-shop-link" aria-label="Boutique">
+          <span class="nav-shop-icon" aria-hidden="true"
+            ><svg viewBox="0 0 24 24" focusable="false">
+              <path d="M7 9V7a5 5 0 0 1 10 0v2" />
+              <path d="M5.5 8.5h13l1 11H4.5l1-11Z" /></svg
+          ></span>
+          <span class="nav-label">Boutique</span>
+        </a>
+        <a href="#contact" class="pill nav-contact-link" aria-label="Contact">
+          <span class="nav-contact-icon" aria-hidden="true"
+            ><svg viewBox="0 0 24 24" focusable="false">
+              <path d="M4.5 6.5h15v11h-15z" />
+              <path d="m5 7 7 6 7-6" /></svg
+          ></span>
+          <span class="nav-label">Contact</span>
+        </a>
       </nav>
-      <div class="footer-credit">
-        <span>Site imaginé et intégré par</span>
-        <a href="https://rzu-informatique.fr" aria-label="RZU Informatique">RZU-Informatique</a>
-      </div>
-    </div>
-    <p class="footer-bottom">© 2026 Maison Bulléa · Démonstration GitHub Pages</p>
-  </footer>
+    </header>
 
-  <script src="assets/app.js"></script>
-</body>
+    <main id="main-content" tabindex="-1">
+      <section class="hero section" id="top" tabindex="-1">
+        <div class="hero-copy reveal">
+          <div class="hero-badge">Fait main à Agen</div>
+          <h1 class="hero-title">L'art du savon<br /><em>artisanal bio</em></h1>
+          <p class="hero-desc">
+            Des savons créés avec amour, des ingrédients naturels sélectionnés
+            avec soin, pour prendre soin de vous et de la planète.
+          </p>
+          <div class="hero-btns">
+            <a href="boutique.html" class="btn-primary"
+              >Découvrir la boutique</a
+            >
+            <a href="#histoire" class="btn-secondary">Notre histoire</a>
+          </div>
+          <div class="hero-stats" aria-label="Valeurs de Maison Bulléa">
+            <div class="stat">
+              <span class="stat-num">100%</span
+              ><span class="stat-label">Bio</span>
+            </div>
+            <span class="stat-sep" aria-hidden="true">·</span>
+            <div class="stat">
+              <span class="stat-num">Fait</span
+              ><span class="stat-label">Main</span>
+            </div>
+            <span class="stat-sep" aria-hidden="true">·</span>
+            <div class="stat">
+              <span class="stat-num">Agen</span
+              ><span class="stat-label">Lot-et-Garonne</span>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+          <div class="scroll-dot"></div>
+          <span>Découvrir</span>
+        </div>
+      </section>
+
+      <section class="section split" id="histoire">
+        <div class="photo-card reveal" aria-hidden="true">
+          <div class="artisan-illustration">
+            <div class="bowl"></div>
+            <div class="spoon"></div>
+            <div class="tiny-soap one"></div>
+            <div class="tiny-soap two"></div>
+          </div>
+        </div>
+        <div class="reveal">
+          <p class="eyebrow">Qui sommes-nous ?</p>
+          <h2>Une savonnerie locale, douce et créative.</h2>
+          <p>
+            Maison Bulléa est une marque fictive imaginée autour d'Agen, dans le
+            Lot-et-Garonne. Le site met en scène un atelier artisanal où chaque
+            savon raconte une histoire : ingrédients bio, parfums naturels,
+            couleurs audacieuses et finitions faites main.
+          </p>
+          <div class="values" aria-label="Valeurs">
+            <span><i class="mini-icon leaf" aria-hidden="true"></i>Bio</span>
+            <span><i class="mini-icon pin" aria-hidden="true"></i>Agen</span>
+            <span
+              ><i class="mini-icon bubble" aria-hidden="true"></i>Ludique</span
+            >
+            <span
+              ><i class="mini-icon gift" aria-hidden="true"></i>Cadeaux</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="panorama">
+        <div class="center reveal">
+          <p class="eyebrow">Galerie immersive</p>
+          <h2>Glisse dans notre atelier panoramique.</h2>
+          <p id="panoramaHelp">
+            Découvrez l’atelier de Maison Bulléa et l’authenticité de ses savons
+            bio fabriqués à la main.
+          </p>
+        </div>
+        <div
+          class="atelier-viewer reveal"
+          id="atelierViewer"
+          role="region"
+          aria-label="Boutique panoramique interactive"
+          aria-describedby="panoramaHelp"
+        >
+          <button
+            class="atelier-arrow left"
+            type="button"
+            data-pan="-1"
+            aria-label="Voir la gauche de l'atelier"
+          ></button>
+          <div class="atelier-window" tabindex="0">
+            <img
+              class="shop-panorama-img"
+              src="assets/images/boutique_panorama_realiste.png"
+              alt="Boutique artisanale avec savons faits main"
+              width="1999"
+              height="787"
+              loading="lazy"
+              decoding="async"
+              draggable="false"
+            />
+          </div>
+          <button
+            class="atelier-arrow right"
+            type="button"
+            data-pan="1"
+            aria-label="Voir la droite de l'atelier"
+          ></button>
+          <div class="atelier-caption">
+            <strong>Boutique panoramique</strong>
+            <span>Découvre l'atelier de gauche à droite.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="produits">
+        <div class="center reveal">
+          <p class="eyebrow">Produits vedettes</p>
+          <h2>Des cartes interactives qui donnent envie de cliquer.</h2>
+        </div>
+        <div
+          class="card-deck reveal"
+          id="cardDeck"
+          role="group"
+          aria-label="Sélection de savons"
+        >
+          <button
+            class="deck-card card-one active"
+            type="button"
+            aria-pressed="true"
+            data-title="Nuage de Rose"
+            data-text="Rose de Damas, argile blanche et karité bio. Une mousse douce, florale et rassurante."
+            data-img="assets/images/savon_nuage_rose_web.jpg"
+          >
+            <span>Nuage de Rose</span>
+          </button>
+          <button
+            class="deck-card card-two"
+            type="button"
+            aria-pressed="false"
+            data-title="Océan Turquoise"
+            data-text="Algues marines, sel de mer et coco vierge. Un savon frais avec une vraie énergie marine."
+            data-img="assets/images/savon_ocean_turquoise_web.jpg"
+          >
+            <span>Océan Turquoise</span>
+          </button>
+          <button
+            class="deck-card card-three"
+            type="button"
+            aria-pressed="false"
+            data-title="Perle d'Agen"
+            data-text="Miel local, huile de prune et reflets dorés. La carte signature du lot."
+            data-img="assets/images/savon_perle_agen_web.jpg"
+          >
+            <span>Perle d'Agen</span>
+          </button>
+          <article class="deck-preview" aria-live="polite">
+            <img
+              src="assets/images/savon_nuage_rose_web.jpg"
+              alt="Savon Nuage de Rose"
+              width="600"
+              height="600"
+              id="deckPreviewImg"
+            />
+            <div>
+              <p class="eyebrow">Carte sortie du paquet</p>
+              <h3 id="deckPreviewTitle">Nuage de Rose</h3>
+              <p id="deckPreviewText">
+                Rose de Damas, argile blanche et karité bio. Une mousse douce,
+                florale et rassurante.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section services" id="services">
+        <div class="reveal">
+          <p class="eyebrow">Nos services</p>
+          <h2>Savons personnalisés, coffrets et créations sur mesure.</h2>
+          <p>
+            Maison Bulléa propose des savons artisanaux biologiques fabriqués à
+            la main, ainsi qu’une sélection de coffrets et créations sur mesure.
+            Chaque produit reflète un engagement fort pour la qualité, la
+            naturalité et le respect de l’environnement.
+          </p>
+          <a class="btn primary shop-cta" href="boutique.html"
+            >Voir la boutique</a
+          >
+        </div>
+        <div class="service-grid reveal">
+          <article>
+            <i class="mini-icon gift" aria-hidden="true"></i
+            ><strong>Coffrets cadeaux</strong
+            ><span>Présentations élégantes.</span>
+          </article>
+          <article>
+            <i class="mini-icon creation" aria-hidden="true"></i
+            ><strong>Créations uniques</strong
+            ><span>Formes, couleurs, motifs.</span>
+          </article>
+          <article>
+            <i class="mini-icon flower" aria-hidden="true"></i
+            ><strong>Parfums naturels</strong
+            ><span>Notes florales et fruitées.</span>
+          </article>
+          <article>
+            <i class="mini-icon star" aria-hidden="true"></i
+            ><strong>Commandes spéciales</strong
+            ><span>Mariages, événements.</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="contact-soaps" aria-hidden="true">
+          <span class="contact-soap soap-rose"></span>
+          <span class="contact-soap soap-blue"></span>
+          <span class="contact-soap soap-mint"></span>
+          <span class="contact-soap soap-gold"></span>
+          <span class="contact-soap soap-violet"></span>
+        </div>
+        <div class="reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Une envie de savon ou de site web ?</h2>
+          <p>
+            Formulaire de démonstration, idéal pour un portfolio GitHub Pages.
+          </p>
+          <div class="socials" aria-label="Réseaux sociaux de démonstration">
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1.2" /></svg
+              ><span class="sr-only">Instagram</span></a
+            >
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M14 8h2.4V4.6A13 13 0 0 0 13.3 4C10.2 4 8 5.9 8 9.3V12H5v3.8h3V22h4.2v-6.2h3.1L16 12h-3.8V9.7c0-1.1.3-1.7 1.8-1.7Z"
+                /></svg
+              ><span class="sr-only">Facebook</span></a
+            >
+            <a
+              href="https://www.pinterest.fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path
+                  d="M12.2 3.5c-4.1 0-7 2.8-7 6.5 0 2.3 1.3 3.7 2.2 3.7.4 0 .6-1.1.6-1.4 0-.4-1-1.2-1-2.7 0-2.7 2-4.5 4.8-4.5 2.4 0 4.2 1.4 4.2 3.9 0 1.9-.8 5.5-3.2 5.5-.9 0-1.7-.7-1.5-1.6.3-1.1.9-2.3.9-3.1 0-2-2.8-1.6-2.8.9 0 .8.3 1.3.3 1.3l-1.4 5.8c-.4 1.7.1 3.8.1 4 .1.1.2.1.3 0 .1-.2 1.8-2.2 2.3-3.8.2-.5.8-3 .8-3 .4.8 1.4 1.4 2.6 1.4 3.4 0 5.7-3.1 5.7-7.2 0-3.1-2.6-5.7-6.9-5.7Z"
+                /></svg
+              ><span class="sr-only">Pinterest</span></a
+            >
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-field">
+            <label for="contactName">Nom</label>
+            <input
+              id="contactName"
+              type="text"
+              name="name"
+              placeholder="Votre nom"
+              autocomplete="name"
+              minlength="2"
+              maxlength="15"
+              required
+            />
+          </div>
+          <div class="form-field">
+            <label for="contactEmail">Email</label>
+            <input
+              id="contactEmail"
+              type="email"
+              name="email"
+              placeholder="vous@email.fr"
+              autocomplete="email"
+              maxlength="25"
+              required
+            />
+          </div>
+          <div class="form-field">
+            <label for="contactMessage">Message</label>
+            <textarea
+              id="contactMessage"
+              name="message"
+              placeholder="Votre message"
+              minlength="10"
+              maxlength="150"
+              rows="5"
+              required
+            ></textarea>
+            <small class="field-limit">150 caracteres maximum</small>
+          </div>
+          <button class="btn primary" type="submit">Envoyer</button>
+          <p
+            class="form-status"
+            id="contactStatus"
+            role="status"
+            tabindex="-1"
+            hidden
+          >
+            Formulaire de démonstration : aucun message n'a été envoyé.
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <strong>Maison Bulléa</strong>
+          <p>Template portfolio pour savonnerie artisanale fictive à Agen.</p>
+        </div>
+        <nav aria-label="Navigation secondaire">
+          <a href="#histoire">Histoire</a>
+          <a href="#panorama">Atelier</a>
+          <a href="boutique.html">Boutique</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="footer-credit">
+          <span>Site imaginé et intégré par</span>
+          <a
+            href="https://rzu-informatique.fr"
+            aria-label="Site de Rzu Informatique"
+            >Rzu-Informatique</a
+          >
+        </div>
+      </div>
+      <p class="footer-bottom">
+        <span>© 2026 Maison Bulléa · Démonstration GitHub Pages</span>
+        <a
+          class="footer-replay"
+          href="index.html?intro=1"
+          aria-label="Revoir la maison"
+          title="Revoir la maison"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4 11.5 12 5l8 6.5" />
+            <path d="M6.5 10.5V20h11v-9.5" />
+            <path d="M10 20v-5h4v5" />
+          </svg>
+        </a>
+      </p>
+    </footer>
+
+    <script src="assets/scripts/app.js"></script>
+    <!-- RZU-Informatique -->
+  </body>
 </html>
