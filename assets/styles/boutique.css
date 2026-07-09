@@ -130,6 +130,18 @@
   overflow-y: auto;
 }
 
+.modal .product-art {
+  height: auto;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+}
+
+.modal .product-art img {
+  object-fit: contain;
+}
+
 .modal-close {
   position: absolute;
   top: 12px;
