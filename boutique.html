@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#fff0f7" />
+    <link rel="icon" href="assets/images/savon_nuage_rose_web.jpg" type="image/jpeg" />
     <title>Boutique — Maison Bulléa</title>
     <meta
       name="description"
@@ -67,52 +68,7 @@
     <a class="skip-link" href="#main-content">Aller au contenu</a>
     <canvas id="bubble-canvas" aria-hidden="true"></canvas>
 
-    <header class="navbar solid" id="navbar">
-      <a class="brand" href="index.html#top" aria-label="Accueil Maison Bulléa">
-        <span class="brand-flower" aria-hidden="true">✿</span>
-        Maison Bulléa
-      </a>
-      <button
-        class="hamburger"
-        id="hamburger"
-        type="button"
-        aria-label="Ouvrir le menu"
-        aria-controls="navLinks"
-        aria-expanded="false"
-      >
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
-        <a href="index.html#histoire">Qui sommes-nous</a>
-        <a href="index.html#panorama">Galerie</a>
-        <a href="index.html#services">Services</a>
-        <a
-          href="boutique.html"
-          class="nav-shop-link"
-          aria-current="page"
-          aria-label="Boutique"
-        >
-          <span class="nav-shop-icon" aria-hidden="true"
-            ><svg viewBox="0 0 24 24" focusable="false">
-              <path d="M7 9V7a5 5 0 0 1 10 0v2" />
-              <path d="M5.5 8.5h13l1 11H4.5l1-11Z" /></svg
-          ></span>
-          <span class="nav-label">Boutique</span>
-        </a>
-        <a
-          href="index.html#contact"
-          class="pill nav-contact-link"
-          aria-label="Contact"
-        >
-          <span class="nav-contact-icon" aria-hidden="true"
-            ><svg viewBox="0 0 24 24" focusable="false">
-              <path d="M4.5 6.5h15v11h-15z" />
-              <path d="m5 7 7 6 7-6" /></svg
-          ></span>
-          <span class="nav-label">Contact</span>
-        </a>
-      </nav>
-    </header>
+    <div data-include="partials/_navbar.html"></div>
 
     <main class="shop-main" id="main-content" tabindex="-1">
       <section class="section shop-hero reveal">
@@ -168,47 +124,9 @@
       </div>
     </div>
 
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <div>
-          <strong>Maison Bulléa</strong>
-          <p>
-            Boutique fictive pour démonstration portfolio. Paiement non
-            fonctionnel.
-          </p>
-        </div>
-        <nav aria-label="Navigation secondaire">
-          <a href="index.html">Accueil</a>
-          <a href="index.html#panorama">Atelier</a>
-          <a href="boutique.html" aria-current="page">Boutique</a>
-          <a href="index.html#contact">Contact</a>
-        </nav>
-        <div class="footer-credit">
-          <span>Site imaginé et intégré par</span>
-          <a
-            href="https://rzu-informatique.fr"
-            aria-label="Site de Rzu Informatique"
-            >Rzu-Informatique</a
-          >
-        </div>
-      </div>
-      <p class="footer-bottom">
-        <span>© 2026 Maison Bulléa · Démonstration GitHub Pages</span>
-        <a
-          class="footer-replay"
-          href="index.html?intro=1"
-          aria-label="Revoir la maison"
-          title="Revoir la maison"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M4 11.5 12 5l8 6.5" />
-            <path d="M6.5 10.5V20h11v-9.5" />
-            <path d="M10 20v-5h4v5" />
-          </svg>
-        </a>
-      </p>
-    </footer>
+    <div data-include="partials/_footer.html"></div>
 
+    <script src="assets/scripts/includes.js"></script>
     <script src="assets/scripts/app.js"></script>
     <!-- RZU-Informatique -->
   </body>

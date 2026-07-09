@@ -102,8 +102,11 @@ function placeMobileMenu() {
 function initNavigation() {
   const button = select("#hamburger");
   const navigation = select("#navLinks");
+  const navbar = select("#navbar");
 
   if (!button || !navigation) return;
+
+  if (location.pathname.endsWith("boutique.html")) navbar?.classList.add("solid");
 
   placeMobileMenu();
   mobileMenuQuery.addEventListener("change", placeMobileMenu);
@@ -281,6 +284,8 @@ function initHeroParallax() {
   let lastEvent = null;
 
   const moveHero = (event) => {
+    if (reducedMotionQuery.matches) return;
+
     lastEvent = event;
     if (raf) return;
 
@@ -314,6 +319,7 @@ function initHeroParallax() {
   document.addEventListener("pointermove", moveHero, { passive: true });
   document.addEventListener("mouseleave", reset);
   hero.addEventListener("mouseleave", reset);
+  reducedMotionQuery.addEventListener("change", reset);
 }
 
 function initTiltCards() {
@@ -757,6 +763,15 @@ function init() {
   initBubbles();
 }
 
-document.addEventListener("DOMContentLoaded", init);
+function startWhenReady() {
+  if (document.querySelector("[data-include]")) {
+    document.addEventListener("includes:ready", init, { once: true });
+    return;
+  }
+
+  init();
+}
+
+document.addEventListener("DOMContentLoaded", startWhenReady);
 
 // RZU-Informatique
