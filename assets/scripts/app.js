@@ -194,7 +194,10 @@ function initIntro() {
   const intro = select("#intro");
   const button = select("#enterSite");
 
-  if (!intro || !button) return;
+  if (!intro || !button) {
+    document.body.classList.remove("intro-active");
+    return;
+  }
 
   const replayRequested =
     new URLSearchParams(window.location.search).get("intro") === "1";
@@ -210,6 +213,7 @@ function initIntro() {
 
   if (!replayRequested && sessionStorage.getItem("entered-bullea")) {
     intro.hidden = true;
+    document.body.classList.remove("intro-active");
     return;
   }
 
@@ -229,6 +233,7 @@ function initIntro() {
       window.setTimeout(() => intro.classList.add("entering"), transitionDelay);
       window.setTimeout(() => {
         intro.hidden = true;
+        document.body.classList.remove("intro-active");
         sessionStorage.setItem("entered-bullea", "1");
         select("#top")?.focus({ preventScroll: true });
       }, completionDelay);
@@ -774,4 +779,4 @@ function startWhenReady() {
 
 document.addEventListener("DOMContentLoaded", startWhenReady);
 
-// RZU-Informatique
+// Copyright RZU Informatique

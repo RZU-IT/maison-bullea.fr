@@ -156,15 +156,15 @@ h2,
 h3 {
   margin: 0 0 20px;
   font-family: Fraunces, serif;
-  line-height: 1;
+  line-height: 1.08;
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: clamp(2.35rem, 4.2vw, 3.45rem);
 }
 
 h2 {
-  font-size: 4.2rem;
+  font-size: clamp(1.9rem, 3.2vw, 2.7rem);
 }
 
 p {
@@ -263,4 +263,4 @@ p {
   white-space: nowrap;
 }
 
-/* RZU-Informatique */
+/* Copyright RZU Informatique */

@@ -32,7 +32,7 @@
   margin: 0 0 16px;
   color: var(--ink);
   font-family: Fraunces, serif;
-  font-size: 4.2rem;
+  font-size: clamp(2.7rem, 6vw, 3.7rem);
   font-weight: 800;
   line-height: 1;
 }
@@ -449,10 +449,6 @@
     filter 0.85s ease;
 }
 
-.house:hover {
-  transform: translateY(-6px) scale(1.03);
-}
-
 .door {
   z-index: 2;
   transition: transform 0.7s var(--ease-out);
@@ -478,10 +474,6 @@
   opacity: 0;
   pointer-events: none;
   transform: translateX(-50%) scale(0.55);
-}
-
-.house.open .door {
-  transform: perspective(450px) rotateY(-68deg);
 }
 
 .house.open .walls::before {
@@ -660,4 +652,4 @@
   }
 }
 
-/* RZU-Informatique */
+/* Copyright RZU Informatique */

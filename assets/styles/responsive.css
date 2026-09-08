@@ -1,10 +1,10 @@
 @media (max-width: 1000px) {
   .hero-title {
-    font-size: 4rem;
+    font-size: clamp(2.3rem, 5.6vw, 3.25rem);
   }
 
   h2 {
-    font-size: 3.4rem;
+    font-size: clamp(1.85rem, 4.3vw, 2.45rem);
   }
 
   .card-deck {
@@ -67,18 +67,11 @@
     transform: translate(-50%, -56%) scale(1.04) rotate(0) translateZ(44px);
   }
 
-  .deck-preview {
-    grid-column: 1;
-  }
 }
 
 @media (max-width: 850px) {
   .navbar {
     top: 10px;
-  }
-
-  body.menu-open {
-    overflow: hidden;
   }
 
   body.menu-open .navbar {
@@ -90,10 +83,6 @@
   body.menu-open .brand,
   body.menu-open .hamburger {
     position: relative;
-  }
-
-  .hamburger {
-    display: block;
   }
 
   .nav-links {
@@ -129,11 +118,6 @@
     transition: transform 0.38s var(--ease-out);
   }
 
-  .nav-links.open {
-    pointer-events: auto;
-    transform: translateX(0);
-  }
-
   .nav-links a {
     display: flex;
     width: min(360px, 86vw);
@@ -156,11 +140,6 @@
       border-color 0.14s ease,
       color 0.14s ease,
       box-shadow 0.14s ease;
-  }
-
-  .nav-links.open a {
-    opacity: 1;
-    transform: translateX(0);
   }
 
   .nav-links.open a {
@@ -241,11 +220,11 @@
 @media (max-width: 640px) {
   h1,
   .hero-title {
-    font-size: 3rem;
+    font-size: clamp(2.15rem, 10vw, 2.7rem);
   }
 
   h2 {
-    font-size: 2.65rem;
+    font-size: clamp(1.75rem, 8vw, 2.15rem);
   }
 
   .lead {
@@ -360,11 +339,6 @@
   }
 
   .service-grid article {
-    justify-items: center;
-    text-align: center;
-  }
-
-  .service-grid article {
     min-height: 112px;
   }
 
@@ -400,11 +374,11 @@
 @media (max-width: 390px) {
   h1,
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   h2 {
-    font-size: 2.25rem;
+    font-size: 1.85rem;
   }
 
   .section {
@@ -445,8 +419,8 @@
     margin-bottom: 64px;
   }
   #produits h2 {
-    font-size: clamp(2.7rem, 5.2vw, 3.35rem);
-    line-height: 1.02;
+    font-size: clamp(2rem, 4.2vw, 2.5rem);
+    line-height: 1.08;
   }
   .card-deck {
     max-width: 900px;
@@ -555,21 +529,6 @@
   }
 }
 
-@media (max-width: 850px) {
-  .shop-toggle-wrap {
-    display: block;
-  }
-
-  .shop-card.mobile-extra {
-    display: none;
-  }
-
-  .shop-grid.expanded .shop-card.mobile-extra {
-    display: flex;
-    animation: shop-card-reveal 0.55s var(--ease-out) both;
-  }
-}
-
 @media (max-width: 700px) {
   #produits .center {
     margin-bottom: 100px;
@@ -606,17 +565,6 @@
 
   .card-three {
     transform: translate(58%, -50%) rotate(8deg) translateZ(8px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .hero::before,
-  .hero-copy {
-    transform: none;
   }
 }
 
@@ -894,7 +842,7 @@
   #services h2 {
     max-width: none;
     margin-inline: 0;
-    font-size: clamp(2rem, 9vw, 2.55rem);
+    font-size: clamp(1.8rem, 8vw, 2.15rem);
     line-height: 1.06;
   }
 
@@ -933,4 +881,4 @@
   }
 }
 
-/* RZU-Informatique */
+/* Copyright RZU Informatique */
