@@ -7,6 +7,8 @@
   border-radius: 32px;
   background: var(--white);
   box-shadow: 0 34px 110px rgba(89, 67, 114, 0.2);
+  -webkit-touch-callout: none;
+  user-select: none;
 }
 
 .atelier-window {
@@ -25,6 +27,9 @@
   height: 100%;
   object-fit: cover;
   user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  pointer-events: none;
 }
 
 .atelier-arrow {
@@ -40,6 +45,9 @@
   background: rgba(255, 255, 255, 0.86);
   box-shadow: 0 18px 42px rgba(36, 48, 68, 0.16);
   cursor: pointer;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  user-select: none;
   place-items: center;
   transform: translateY(-50%);
   transition:

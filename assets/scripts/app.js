@@ -355,6 +355,14 @@ function initAtelierViewer() {
 
   if (!viewer || !windowElement) return;
 
+  viewer.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+  });
+
+  viewer.addEventListener("dragstart", (event) => {
+    event.preventDefault();
+  });
+
   let dragging = false;
   let dragStart = 0;
   let initialScroll = 0;
